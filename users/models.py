@@ -10,3 +10,7 @@ class Book(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     author = models.ForeignKey('User', on_delete=models.CASCADE, related_name='book')
+    
+    class Meta:
+        verbose_name = 'Книга'
+        verbose_name_plural = 'Книги'

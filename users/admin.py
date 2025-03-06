@@ -9,9 +9,9 @@ User = get_user_model()
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['id', 'email', 'first_name', 'last_name', 'username', ]
-    list_display_links = ['email', ]
+    list_display_links = ['email', 'username']
     search_fields = ['first_name', 'last_name', ]
-    readonly_fields = ['username', ]
+    readonly_fields = ['username', 'id']
     list_filter = ['first_name', 'last_name', ]
     fieldsets = (
         (
@@ -20,7 +20,7 @@ class UserAdmin(admin.ModelAdmin):
         }),
         (
             "Админская информация", {
-                'fields': ('username', 'id', 'date_of_bitrth')
+                'fields': ('username', 'id', 'date_of_birth')
             }
         )
     )
